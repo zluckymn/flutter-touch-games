@@ -1,3 +1,5 @@
+ 
+![avatar](https://github.com/zluckymn/flutter-touch-games/blob/master/flutter-touch-game/sample/JXFFBXUM2RK%2520ZP0R5BW%7BS.png?raw=true)
 #简介
 * 该程序为flutter+flame 学习过程中 尝试根据引擎开发的一款尝试性快速小游戏，中间加入了某熟悉的细节，游戏资源来源与网上采集 注重画风大家按照需求自行替换， 如果问题麻烦留言。
 # 系统
