@@ -1,30 +1,16 @@
-# mz_mn_game
+# flutter_touch_game
 
-A new Flutter application.
+A new Flutter project.
 
 ## Getting Started
 
+This project is a starting point for a Flutter application.
 
-## 项目目录
-```
-├── android               // android 平台相关
-├── ios                   // ios 平台相关
-├── lib                   // flutter 相关
-│   ├── api               // 网路数据层
-│   ├── common            // 常用类
-│   ├── models            // 实体类
-│   ├── utils             // 工具类
-|   ├── widget            //游戏相关代码
-│   └── main.dart         // app 入口文件
-│
-├── assets                // 项目静态资源.
-│   ├── images            // 公共图片
-│   ├── anim              // 动画资源
-│   ├── audio             // 音频文件
-│   ├── fonts             // 系统字体包
-│   └── data              // 数据资源
-│
-├── test                  // 测试代码
-└── pubspec.yaml          // 配置文件 依赖包，静态文件
-```
+A few resources to get you started if this is your first Flutter project:
 
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

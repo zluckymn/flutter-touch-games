@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Modify this file to customize your launch splash_image screen -->
+<!-- Modify this file to customize your launch splash screen -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@android:color/white" />
 
@@ -9,8 +9,4 @@
             android:gravity="center"
             android:src="@mipmap/launch_image" />
     </item> -->
-    <!--这样写可以通过图片铺满整个屏幕，不同屏幕可能会有拉伸-->
-    <item android:gravity="top">
-        <bitmap android:src="@drawable/splash_image" android:gravity="center_horizontal"/>
-    </item>
 </layer-list>

@@ -13,18 +13,24 @@ import '../flame_monster.dart';
 class ElitMonster extends Monster {
   ElitMonster({this.game, ItemRare monsterRare}) : super(game: game) {
     flyingSprite = new List<Sprite>();
-    var sex = game.rnd.nextInt(2);
-    var type = game.rnd.nextInt(10);
-    var mood = game.rnd.nextInt(2) - 1;
-    flyingSprite.add(new Sprite('map/${sex}_${type}_$mood.png'));
-    deadSprite = new Sprite('map/${sex}_${type}_2.png');
+    // var sex = game.rnd.nextInt(2);
+    // var type = game.rnd.nextInt(10);
+    // var mood = game.rnd.nextInt(2) - 1;
+    // flyingSprite.add(new Sprite('map/${sex}_${type}_$mood.png'));
+    // deadSprite = new Sprite('map/${sex}_${type}_2.png');
+    var bossUiIndex =
+        game.rnd.nextInt(game.resourceManager.monsterSpriteList.length);
+    var bossSprite = game.resourceManager.monsterSpriteList[bossUiIndex];
+    flyingSprite.add(bossSprite);
+    deadSprite = bossSprite;
     flyRect = Rect.fromLTWH(x, y, game.tileSize * 1.9, game.tileSize * 1.9);
     rare = monsterRare;
   }
   double monsterSpeedEnhence = 3.7;
-  double get speed => game.tileSize * monsterSpeedEnhence*game.towerlevelEnhence;
+  double get speed =>
+      game.tileSize * monsterSpeedEnhence * game.towerlevelEnhence;
   int hits = 0;
-  int get initHp => (5 * Game_HP_Unit*game.towerlevelEnhence).toInt();
+  int get initHp => (5 * Game_HP_Unit * game.towerlevelEnhence).toInt();
   int lives = 1;
   bool canKill = false;
   double speedEnhence = 1; //速度偏移
@@ -33,7 +39,7 @@ class ElitMonster extends Monster {
   bool hasCallout = false; //不会超时
   HitTipWarning hitTipWarning; //boss技能提示
   bool isTipWarning = false;
-  bool hasHp=true;
+  bool hasHp = true;
   //击杀后特效
   @override
   void onHitEffect() async {

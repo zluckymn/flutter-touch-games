@@ -25,6 +25,7 @@ class ResourceManager {
   List<String> finishEffectSpriteList = new List<String>(); //qte终结 状态
   List<Sprite> monsterSpriteList = new List<Sprite>();
   List<Sprite> monsterEmoticonSpriteList = new List<Sprite>();
+  List<String> lifeSpriteList = new List<String>();
   ResourceManager(this.game);
   Future loadResource() async {
     loadImg();
@@ -35,14 +36,14 @@ class ResourceManager {
   Future loadImg() async {
     //背景图片
     var bgList = new List<String>();
-    for (var sex = 0; sex <= 1; sex++) {
-      for (var type = 0; type <= 9; type++) {
-        bgList.add("map/${sex}_${type}_0.png");
-        bgList.add("map/${sex}_${type}_1.png");
-        bgList.add("map/${sex}_${type}_-1.png");
-        bgList.add("map/${sex}_${type}_2.png");
-      }
-    }
+    // for (var sex = 0; sex <= 1; sex++) {
+    //   for (var type = 0; type <= 9; type++) {
+    //     bgList.add("map/${sex}_${type}_0.png");
+    //     bgList.add("map/${sex}_${type}_1.png");
+    //     bgList.add("map/${sex}_${type}_-1.png");
+    //     bgList.add("map/${sex}_${type}_2.png");
+    //   }
+    // }
     //物品获得图片
     boundSpriteList = new List<String>();
     for (var index = 0; index <= 3; index++) {
@@ -83,6 +84,10 @@ class ResourceManager {
 
     //终结爆炸效果
     finishEffectSpriteList.add("game/boom_effect.png");
+    //生命
+    for (var index = 5; index <= 10; index++) {
+      lifeSpriteList.add("game/mood_$index.png");
+    }
 
     var allImglist = new List<String>();
     allImglist.addAll(bgList);
@@ -92,6 +97,7 @@ class ResourceManager {
     allImglist.addAll(comboRedSpriteList);
     allImglist.addAll(comboBlueSpriteList);
     allImglist.addAll(lightSpriteList);
+
     allImglist.addAll(buffSpriteList); //添加buff
     allImglist.addAll(<String>[
       'game/Fever.png',
@@ -117,8 +123,8 @@ class ResourceManager {
       'game/loading_bar.png', //技能读条
       'game/loading_bar_bg.png',
       'game/loading_bar_fever.png',
-      'game/expert_bar_bg.png',//经验栏
-      'game/expert_bar_yellow.png',//经验栏
+      'game/expert_bar_bg.png', //经验栏
+      'game/expert_bar_yellow.png', //经验栏
       'game/item_heart.png',
       'game/item_poison.png', //毒状态
       'game/item_random.png', //随机
@@ -128,36 +134,37 @@ class ResourceManager {
       'game/fx_frozzen.png', //冰冻
       'game/fx_catch.png', //禁锢
       'game/ui_boss_collection.png', //bossUI
-      'game/emoticon.png',//表情
-      'game/emoticon_collection.png',//随机表情
-      'game/fx_hit_miss.png',//miss殿中
+      'game/emoticon.png', //表情
+      'game/emoticon_collection.png', //随机表情
+      'game/fx_hit_miss.png', //miss殿中
       'game/item_bloodrush_skill.png',
     ]);
     Flame.images.loadAll(allImglist);
     loadBossSpriteList();
     loadEmoticonSpriteList();
   }
+
   //加载bossUI
   Future loadBossSpriteList() async {
     double width = 30;
-    double height=32;
+    double height = 32;
     for (var index = 0; index <= 13; index++) {
       var x = index * width;
       monsterSpriteList.add(Sprite('game/ui_boss_collection.png',
           height: height, width: width, x: x, y: 0));
     }
   }
-   //加载bossUI表情
+
+  //加载bossUI表情
   Future loadEmoticonSpriteList() async {
     double width = 43;
-    double height=60;
+    double height = 60;
     for (var index = 0; index < 13; index++) {
       var x = index * width;
       monsterEmoticonSpriteList.add(Sprite('game/emoticon_collection.png',
           height: height, width: width, x: x, y: 0));
     }
   }
-  
 
   //加载音效
   Future loadAuido() async {
